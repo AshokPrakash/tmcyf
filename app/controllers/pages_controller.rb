@@ -25,34 +25,13 @@ class PagesController < ApplicationController
   end
   def update_preferences
     @user = current_user
-    if params['Facebook']
-      @user.facebook_contact=true
-    else
-      @user.facebook_contact=false
-    end
-    gibbon = Gibbon::API.new
-    Gibbon::API.throws_exceptions = false
-    if params["email"]
-      @user.email_contact=true 
-      if gibbon.lists.members(id: "4c04c52ede", email: @user.email)
-        gibbon.lists.subscribe({:id => "4c04c52ede", :email => {:email => @user.email}, :merge_vars => {:FNAME => @user.fname, :LNAME => @user.lname}, :double_optin => false})
-      end
-    else
-      @user.email_contact=false 
-      if gibbon.lists.members(id: "4c04c52ede", email: @user.email)
-        gibbon.lists.unsubscribe({:id => "4c04c52ede", :email => {:email => @user.email}, :merge_vars => {:FNAME => @user.fname, :LNAME => @user.lname}, :double_optin => false})
-      end
-    end
+    params['Facebook'] ? @user.facebook_contact=true : @user.facebook_contact=false
+    params["email"] ? @user.email_subscribe : @user.email_unsubscribe 
     if params["SMS"]
-      if @user.phone?
-        @user.sms_contact=true 
-      else
-        # need to flash an error notifying the user that they don't have
-        # a valid phone number
-        flash[:error] = "Please enter a valid phone number in your Profile."
-      end
+      error_msg = "There was a problem subscribing you to our text alerts. Is there a valid phone number in your Profile?" 
+      flash[:error] = error_msg unless @user.sms_subscribe 
     else
-      @user.sms_contact=false
+      @user.sms_unsubscribe
     end
     @user.save!
     redirect_to account_preferences_path
