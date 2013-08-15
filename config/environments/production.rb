@@ -64,7 +64,9 @@ Static::Application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-
+  
+  PUBLIC_URL = ENV['HOST_NAME']
+  
   config.action_mailer.default_url_options = { :host => ENV['HOST_NAME'] }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
