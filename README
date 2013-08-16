@@ -1,38 +1,16 @@
 --
-Work In Progress
+Deployment
 
-Finished Work
- - events page @done
- - preference pages with service integration @done
-  - twilio sms subscribe/unsubscribe @done
-  - twilio sms send @done
-  - mailchimp list subscribe/unsubscribe @done
- - resources page @done
- - clean up dependencies @done
- - deployment @done 
- - admin login and admin controls @done 
- - prompt users to add personal data @done
+Live at: http://dev.tmcyf.org/ or http://ec2-184-73-116-177.compute-1.amazonaws.com/
 
-Currently in progress
- - stripe integration
-  - payments model
-  - stripe payment action
-  - conditional registration
-  - account payment status
- - bug fixes / refactoring 
+To make shit work: 
 
-Work that's left
- - status page
-  - if user has fully registered
-  - if user has selected a contact preference
-  - if user has paid dues
- - ICS for events page
- - deployment
- - flash messages for saved user state across the app
- 
-Stretch Goals:
- - facebook event creation
- - facebook message send
- - facebook message subscribe/unsubscribe
- - one-to-many texting & flexible replies
- - search
+1. checkout branch
+2. ask for file with env vars nicely
+3. run cap rubber:refresh to add host to local host file
+
+Recommended workflow:
+
+1. make changes in develop
+2. merge with deploy (should have zero conflicts)
+3. run cap deploy

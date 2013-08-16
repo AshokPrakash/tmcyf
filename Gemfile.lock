@@ -96,12 +96,6 @@ GEM
     excon (0.25.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
-<<<<<<< HEAD
-    figaro (0.7.0)
-      bundler (~> 1.0)
-      rails (>= 3, < 5)
-=======
->>>>>>> develop
     fog (1.14.0)
       builder
       excon (~> 0.25.0)
