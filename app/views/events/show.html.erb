@@ -22,7 +22,7 @@
 		<div class="ics"><i class="icon-download-alt"></i><%= link_to " Calendar Event", :controller => 'events', :action => :show, :format => :ics %></div>
 
 		<%= link_to 'Back to Events', events_path %><br>
-		<% if current_user.admin? %>
+		<% if current_user.try(:admin?) %>
 		<hr />
 			<%= link_to "edit", edit_event_path(@event) %><br><%= button_to('destroy', event_path(@event), method: :delete ) %>
 		<% end %>
