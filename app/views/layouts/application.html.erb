@@ -12,9 +12,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
   	<title><%= full_title(yield(:title)) %></title>
-
   	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -30,5 +28,6 @@
     <%= render 'layouts/footer' %>    
 
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
   </body>
 </html>
