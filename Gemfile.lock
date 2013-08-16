@@ -96,6 +96,9 @@ GEM
     excon (0.25.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fog (1.14.0)
       builder
       excon (~> 0.25.0)
@@ -236,6 +239,7 @@ DEPENDENCIES
   compass-rails!
   debugger
   devise (~> 3.0.0.rc)
+  figaro
   fog
   font-awesome-rails
   friendly_id!
