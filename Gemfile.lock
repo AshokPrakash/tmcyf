@@ -7,15 +7,6 @@ GIT
       compass (>= 0.12.2, < 0.14)
 
 GIT
-<<<<<<< HEAD
-  remote: git://github.com/norman/friendly_id.git
-  revision: a8d29d836d58c1b22dc48ae5cdb8cc61bee9acda
-  specs:
-    friendly_id (5.0.0.beta1)
-
-GIT
-=======
->>>>>>> develop
   remote: git://github.com/rubber/rubber.git
   revision: 313ef2d3e53e8181de89fc98c4ab47fe765fc573
   specs:
