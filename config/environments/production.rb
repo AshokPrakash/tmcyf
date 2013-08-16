@@ -65,9 +65,9 @@ Static::Application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
   
-  PUBLIC_URL = ENV['HOST_NAME']
+  PUBLIC_URL = 'ec2-184-73-116-177.compute-1.amazonaws.com'
   
-  config.action_mailer.default_url_options = { :host => ENV['HOST_NAME'] }
+  config.action_mailer.default_url_options = { :host => 'ec2-184-73-116-177.compute-1.amazonaws.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp

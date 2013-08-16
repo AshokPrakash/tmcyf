@@ -1,6 +1,6 @@
 ---
 - !ruby/object:Rubber::Configuration::InstanceItem
-  name: production
+  name: tartarus
   domain: tmcyf.org
   roles:
   - !ruby/object:Rubber::Configuration::RoleItem
@@ -46,14 +46,14 @@
   - !ruby/object:Rubber::Configuration::RoleItem
     name: web_tools
     options: {}
-  instance_id: i-cc1d21a2
+  instance_id: i-4e2f952b
   image_type: t1.micro
   image_id: ami-23d9a94a
   security_groups:
   - tmcyf_production_default
   - tmcyf_production_web
   - tmcyf_production_web_tools
-  - tmcyf_production_production
+  - tmcyf_production_tartarus
   - tmcyf_production_app
   - tmcyf_production_unicorn
   - tmcyf_production_nginx
@@ -66,10 +66,10 @@
   - tmcyf_production_examples
   - tmcyf_production_graphite_server
   - tmcyf_production_graphite_web
-  external_host: ec2-54-235-237-44.compute-1.amazonaws.com
-  external_ip: 54.235.237.44
-  internal_host: ip-10-147-203-216.ec2.internal
-  internal_ip: 10.147.203.216
+  external_host: ec2-184-73-116-177.compute-1.amazonaws.com
+  external_ip: 184.73.116.177
+  internal_host: ip-10-203-3-147.ec2.internal
+  internal_ip: 10.203.3.147
   zone: us-east-1d
   provider: aws
   platform: linux
