@@ -40,6 +40,7 @@ end
 # DEPLOYMENT
 gem 'unicorn'
 gem 'capistrano', group: :development
+gem 'thin', group: :development
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
