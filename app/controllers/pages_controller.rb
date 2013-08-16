@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def account
+    redirect_to :root unless current_user && current_user.admin?
   end
 
   def admin
