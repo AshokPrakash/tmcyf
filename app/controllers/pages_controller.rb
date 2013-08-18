@@ -19,6 +19,7 @@ class PagesController < ApplicationController
 
   def admin
     redirect_to :root unless current_user && current_user.admin?
+    @fbname = User.where(facebook_contact: true).collect { |user| user.fullname }
   end
 
   def preferences

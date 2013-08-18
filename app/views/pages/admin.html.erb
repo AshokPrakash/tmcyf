@@ -8,3 +8,11 @@
 		<%= link_to "Create a SMS", contact_all_path, class: "new-sms-link" %>
 	</div>
 </div>
+<br>
+<div class="row">
+	<div class="large-12 columns">
+		<h5>List of users who prefer Facebook:</h5>
+		<% @fbname.each do |fullname| %>
+			<%= fullname %>
+		<% end %>
+</div>

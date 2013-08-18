@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :timeoutable
   
   def fullname
-  	self.fname + self.lname
+  	self.fname + " " + self.lname
   end
 
   def address
