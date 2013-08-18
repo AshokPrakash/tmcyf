@@ -17,16 +17,16 @@ class User < ActiveRecord::Base
     gibbon = Gibbon::API.new
     Gibbon::API.throws_exceptions = false
     self.email_contact = true 
-    if !gibbon.lists.members(id: "4c04c52ede", email: self.email)
-      gibbon.lists.subscribe({:id => "4c04c52ede", :email => {:email => self.email}, :merge_vars => {:FNAME => self.fname, :LNAME => self.lname}, :double_optin => false})
+    if !gibbon.lists.members(id: "450d7581dd", email: self.email)
+      gibbon.lists.subscribe({:id => "450d7581dd", :email => {:email => self.email}, :merge_vars => {:FNAME => self.fname, :LNAME => self.lname}, :double_optin => false})
     end
   end
   def email_unsubscribe
     gibbon = Gibbon::API.new
     Gibbon::API.throws_exceptions = false
     self.email_contact = false 
-    if gibbon.lists.members(id: "4c04c52ede", email: self.email)
-      gibbon.lists.unsubscribe({:id => "4c04c52ede", :email => {:email => self.email}, :merge_vars => {:FNAME => self.fname, :LNAME => self.lname}, :double_optin => false})
+    if gibbon.lists.members(id: "450d7581dd", email: self.email)
+      gibbon.lists.unsubscribe({:id => "450d7581dd", :email => {:email => self.email}, :merge_vars => {:FNAME => self.fname, :LNAME => self.lname}, :double_optin => false})
     end
   end
   def sms_subscribe
