@@ -38,6 +38,75 @@ div.ui-datepicker{
   margin-bottom: 1.5em;
 }
 
+.button {
+  background: none;
+  margin: 0 0 1.25em;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: $primary;
+  border-color: $primary;
+  line-height: 1;
+  transition: background-color 300ms ease-out;
+  -moz-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
+  -webkit-transition: background-color 300ms ease-out;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0) inset;
+  -moz-box-shadow: 0 0 0 rgba(255, 255, 255, 0) inset;
+  -webkit-box-shadow: 0 0 0 rgba(255, 255, 255, 0) inset;
+  &:hover {
+    background-color: $primary;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+textarea {
+  border: 1px solid #ccc;
+  font-size: 14px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 15px;
+  line-height: 20px;
+  color: #555;
+  &:focus {
+    border-color: $primary;
+  }
+}
+
+input {
+  &[type="text"], &[type="password"], &[type="datetime"], &[type="datetime-local"], &[type="date"], &[type="month"], &[type="time"], &[type="week"], &[type="number"], &[type="email"], &[type="url"], &[type="search"], &[type="tel"], &[type="color"] {
+    border: 1px solid #ccc;
+    font-size: 14px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 15px;
+    line-height: 20px;
+    color: #555;   
+    &:focus {
+      border-color: $primary;
+      outline: none;
+    }
+  }
+}
+
+.uneditable-input {
+  border: 1px solid #ccc;
+  font-size: 14px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 15px;
+  line-height: 20px;
+  color: #555;
+  &:focus {
+    border-color: $primary;
+  }
+}
+
+
 // ABOUT
 
 .hero, .herocontact, .herobiblestudy, .heroofficers, .heroservice, .herosocials, .herotribes {
