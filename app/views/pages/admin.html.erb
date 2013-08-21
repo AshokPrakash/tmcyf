@@ -1,18 +1,20 @@
+<% provide(:title, 'Admin') %>
 <div class="row">
-	<div class="large-12 columns">
-		<%= link_to "Create a New Event", new_event_path, class: "new-event-link" %>
+	<%= render 'layouts/account_menu' %>
+	<div class="large-9 columns">
+		<div class="row">
+			<div class="large-12 columns">
+				<%= link_to "Create a New Event", new_event_path, class: "new-event-link" %>
+			</div>
+			<div class="large-12 columns">
+				<%= link_to "Create a SMS", contact_all_path, class: "new-sms-link" %>
+			</div>
+			<div class="large-12 columns">
+				<h5>List of users who prefer Facebook:</h5>
+				<% @fbname.each do |fullname| %>
+					<%= fullname %>
+				<% end %>
+			</div>
+		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="large-12 columns">
-		<%= link_to "Create a SMS", contact_all_path, class: "new-sms-link" %>
-	</div>
-</div>
-<br>
-<div class="row">
-	<div class="large-12 columns">
-		<h5>List of users who prefer Facebook:</h5>
-		<% @fbname.each do |fullname| %>
-			<%= fullname %>
-		<% end %>
 </div>

@@ -7,13 +7,29 @@
           <h2>Contact Preferences</h2>
           <p>Here you can choose how you want to be contacted by the YF. <br>Options include: email, facebook, and text.</p>
           <%= form_tag account_preferences_path, method: "POST" %> 
-          <%= label_tag "Facebook" %>
-          <%= check_box_tag "Facebook", 1, @user.facebook_contact %>
-          <%= label_tag "Email" %>
-          <%= check_box_tag "email", 1, @user.email_contact %>
-          <%= label_tag "SMS" %>
-          <%= check_box_tag "SMS", 1, @user.sms_contact %>
-          <%= submit_tag %>
+          <div class="row preference">
+            <ul>
+              <li>
+                <%= label_tag "Facebook", nil, class: 'large-2 columns' %>
+                <div class="make-switch switch-small">
+                  <%= check_box_tag "Facebook", 'yes', @user.facebook_contact %>
+                </div>
+              </li>
+              <li>
+                <%= label_tag "Email", nil, class: 'large-2 columns' %>
+                <div class="make-switch switch-small">
+                  <%= check_box_tag "email", 1, @user.email_contact %>
+                </div>
+              </li>
+              <li>
+                <%= label_tag "SMS", nil, class: 'large-2 columns' %>
+                <div class="make-switch switch-small">
+                  <%= check_box_tag "SMS", 1, @user.sms_contact %>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <%= submit_tag "Save", class: 'button' %>
 	     </div>
 	  </fieldset>
 	</div>
