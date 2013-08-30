@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130810194148) do
+ActiveRecord::Schema.define(version: 20130818030811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "credit_cards", force: true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "stripe_token"
-  end
 
   create_table "events", force: true do |t|
     t.string   "title"
@@ -40,10 +33,10 @@ ActiveRecord::Schema.define(version: 20130810194148) do
 
   create_table "payments", force: true do |t|
     t.integer  "event_id"
-    t.integer  "credit_card_id"
     t.datetime "payment_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "last4"
   end
 
   create_table "users", force: true do |t|
@@ -77,6 +70,7 @@ ActiveRecord::Schema.define(version: 20130810194148) do
     t.boolean  "facebook_contact"
     t.boolean  "sms_contact"
     t.boolean  "admin",                  default: false
+    t.string   "stripe_id"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree

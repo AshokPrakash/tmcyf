@@ -44,11 +44,17 @@
         </div>
       </div>  
       <div class="row">
+        <div class="large-2 columns">    
+          <%= f.label :cost %><br>
+          <%= f.text_field :cost %>
+        </div>
+      </div>      
+      <div class="row">
         <div class="large-5 columns">
           <%= f.label :image %><br>
           <%= f.file_field :image %>
         </div>
-      </div>
+      </div>   
       <div class="row">
         <div class="large-5 columns">
           <%= f.label :remote_image_url, "or image URL" %><br>

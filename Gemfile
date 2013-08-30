@@ -4,6 +4,8 @@ source 'http://rubygems.org'
 gem 'ruby'
 gem 'rails', '4.0.0'
 
+# Use Thin instead of Webrick
+gem 'thin'
 # DATABASE
 gem 'pg'
 
@@ -21,8 +23,10 @@ gem 'devise', '~> 3.0.0.rc'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'fog'
-gem 'friendly_id', '5.0.0beta1'
+gem 'friendly_id', '5.0.0.beta1'
 gem 'twilio-ruby'
+gem 'pry', group: :development # for debugging
+gem 'stripe'
 gem 'gibbon'
 gem 'rubber', github: 'rubber/rubber'
 gem 'rmagick', '2.13.2'

@@ -1,37 +1,50 @@
 Static::Application.routes.draw do
-  resources :events
+  resources :events do
+    resources :payments, only: [:create, :new]
+  end
+
+  # the model for credit cards is no longer necessary (we're storing them with 
+  # stripe), but the routes for credit cards still are 
+  resources :credit_cards, only: [:new, :create, :delete, :show]
   
-  devise_for :users, :controllers => { :registrations => :registrations, :confirmations => :confirmations }, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'register', :password => 'reset'}
+  devise_for :users, 
+    controllers: { registrations: :registrations, confirmations: :confirmations },
+    path: '',
+    path_names: {sign_in: 'login',
+                 sign_out: 'logout',
+                 sign_up: 'register',
+                 password: 'reset'}
 
   devise_scope :user do
-    get "/login"                    => "devise/sessions#new"
-    get "/logout"                   => "devise/sessions#destroy"
-    get "/register"                 => "devise/registrations#new"
-    post "/register"                => "devise/registrations#create"
-    get "/reset"                    => "devise/passwords#new"
-    put "/reset"                    => "devise/passwords#update"
-    post "/reset"                   => "devise/passwords#create"
-    get "/reset/change"             => "devise/passwords#edit"
-    get "/account/profile"        => "devise/registrations#edit"
-    patch "/account/profile"      => "devise/registrations#update"
-    put "/account/profile"        => "devise/registrations#update"
+    get '/login'                    => 'devise/sessions#new'
+    get '/logout'                   => 'devise/sessions#destroy'
+    get '/register'                 => 'devise/registrations#new'
+    post '/register'                => 'devise/registrations#create'
+    get '/reset'                    => 'devise/passwords#new'
+    put '/reset'                    => 'devise/passwords#update'
+    post '/reset'                   => 'devise/passwords#create'
+    get '/reset/change'             => 'devise/passwords#edit'
+    get '/account/profile'          => 'devise/registrations#edit'
+    patch '/account/profile'        => 'devise/registrations#update'
+    put '/account/profile'          => 'devise/registrations#update'
   end
 
   root to: 'pages#home'
-  match '/about',         to: 'pages#about',        via: 'get'
-    match '/about/biblestudies',  to: 'pages#about_biblestudies',     via: 'get'
-    match '/about/tribes',        to: 'pages#about_tribes',           via: 'get'
-    match '/about/service',       to: 'pages#about_service',          via: 'get'
-    match '/about/socials',       to: 'pages#about_socials',          via: 'get'
-    match '/about/officers',      to: 'pages#about_officers',         via: 'get'
-    match '/about/contact',       to: 'pages#about_contact',          via: 'get'
-  match '/biblestudy',    to: 'pages#biblestudy',   via: 'get'
-  match '/account',    to: 'pages#account',   via: 'get'
-  match '/admin',    to: 'pages#admin',   via: 'get'
-    match '/account/profile',    to: 'pages#profile',   via: 'get'
-    match '/account/preferences',    to: 'pages#preferences',   via: 'get'
-    match '/account/preferences',    to: 'pages#update_preferences',   via: 'post'
-    match '/account/payments',    to: 'pages#payments',   via: 'get' 
-  match '/admin/contact_all', to: 'contact#contact_all', via: 'get', as: "contact_all"
-  match '/admin/send_message', to: 'contact#send_all_message', via: 'post', as: "send_message"
+  get '/about'                      => 'pages#about'
+    get '/about/biblestudies'       => 'pages#about_biblestudies'
+    get '/about/tribes'             => 'pages#about_tribes'
+    get '/about/service'            => 'pages#about_service'
+    get '/about/socials'            => 'pages#about_socials'
+    get '/about/officers'           => 'pages#about_officers'
+    get '/about/contact'            => 'pages#about_contact'
+  get '/biblestudy'                 => 'pages#biblestudy'
+  get '/account'                    => 'pages#account'
+  get '/admin'                      => 'pages#admin'
+  get '/account/profile'            => 'pages#profile'
+  get '/account/preferences'        => 'pages#preferences'
+  post '/account/preferences'       => 'pages#update_preferences'
+  get '/account/payments'           => 'payments#index' 
+  # TODO: routed with default for expediency, change this later
+  get '/admin/contact_all'          => 'contact#contact_all', as: "contact_all"
+  post '/admin/send_message'        => 'contact#send_all_message', as: "send_message"
 end

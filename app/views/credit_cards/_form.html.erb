@@ -1,0 +1,13 @@
+<!-- render this form from the payments/index page -->
+<!-- TODO: neither of these remote: true flags are being set correctly, figure out why -->
+<%= form_tag credit_cards_path, id: "add_credit_card", remote: true %>
+<%= label_tag :card_number, "Credit Card Number" %>
+<%= text_field_tag :card_number, nil, name: nil, :"data-stripe" => "number" %>
+<%= label_tag :card_code, "Security Code on Card (CVV)" %>
+<%= text_field_tag :card_code, nil, name: nil, :"data-stripe" => "cvc" %>
+<%= label_tag :card_month, "Card Expiration MM / YYYY" %>
+<!-- TODO: change these select elements to text_fields with lengths of 2 and 4 -->
+<%= text_field_tag :card_month, nil, name: nil, size: 2, :"data-stripe" => "exp-month" %>
+<%= text_field_tag :card_year, nil, name: nil, size: 4, :"data-stripe" => "exp-year" %>
+<%= submit_tag "Save Credit Card", id: "new_credit_card", remote: true%>
+</form>
