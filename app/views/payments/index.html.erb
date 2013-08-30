@@ -24,13 +24,13 @@
 				  </thead>
 				  <tbody>
             <!-- TODO: maybe we can make this something like render "event_payment_form" -->
-            <% if @events %>
-              <% @events.each do |event| %>
+            <% if @unpaid_events %>
+              <% @unpaid_events.each do |unpaid_event| %>
                 <tr>
-                  <td><%= event.title %></td>
-                  <td><%= number_to_currency(event.cost) %></td>
+                  <td><%= unpaid_event.title %></td>
+                  <td><%= number_to_currency(unpaid_event.cost) %></td>
                   <!-- TODO: This Pay Now button can be a post request to the payments controller, with remote: true, and we can return some javascript to display loading and stripe-success -->
-                  <td><%= button_to "Pay Now", event_payments_path(event), class: "button btn-pay", method: :post %></td>
+                  <td><%= button_to "Pay Now", event_payments_path(unpaid_event), class: "button btn-pay", method: :post %></td>
                 </tr>
               <% end %>
             <% end %>

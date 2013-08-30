@@ -1,11 +1,9 @@
 class PaymentsController < ApplicationController
   def index
-    @events = Event.all # test code, TODO: delete l8ter
-    # TODO: test to ensure that this returns the correct events
-    # events_requiring_payment = Event.where.not(cost: nil)
-    # events_paid_for = current_user.payments.collect { |p| p.event }
+    events_requiring_payment = Event.where.not(cost: nil)
+    events_paid_for = current_user.payments.collect { |p| p.event }
     # the set difference of two arrays a & b in ruby is (a - b) | (b - a)
-    # @unpaid_events = events_requiring_payment - events_paid_for | events_paid_for - events_requiring_payment
+    @unpaid_events = events_requiring_payment - events_paid_for | events_paid_for - events_requiring_payment
   end
   def new
     @payment = Payment.new
