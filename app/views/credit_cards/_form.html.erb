@@ -1,13 +1,25 @@
-<!-- render this form from the payments/index page -->
-<!-- TODO: neither of these remote: true flags are being set correctly, figure out why -->
-<%= form_tag credit_cards_path, id: "add_credit_card", remote: true %>
-<%= label_tag :card_number, "Credit Card Number" %>
-<%= text_field_tag :card_number, nil, name: nil, :"data-stripe" => "number" %>
-<%= label_tag :card_code, "Security Code on Card (CVV)" %>
-<%= text_field_tag :card_code, nil, name: nil, :"data-stripe" => "cvc" %>
-<%= label_tag :card_month, "Card Expiration MM / YYYY" %>
-<!-- TODO: change these select elements to text_fields with lengths of 2 and 4 -->
-<%= text_field_tag :card_month, nil, name: nil, size: 2, :"data-stripe" => "exp-month" %>
-<%= text_field_tag :card_year, nil, name: nil, size: 4, :"data-stripe" => "exp-year" %>
-<%= submit_tag "Save Credit Card", id: "new_credit_card", remote: true%>
+<form>
+	<div class="row">
+		<%= form_tag credit_cards_path, id: "add_credit_card", remote: true %>
+		<div class="large-4 columns">
+			<%= text_field_tag :card_number, nil, name: nil, placeholder: "Credit Card Number", :"data-stripe" => "number" %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-2 columns">
+			<%= text_field_tag :card_code, nil, name: nil, placeholder: "CVV", :"data-stripe" => "cvc" %>
+		</div>
+	</div>
+		<%= label_tag :card_month, "Card Expiration" %>
+		<div class="row">
+			<div class="large-3 columns">
+				<%= select_month nil, {add_month_numbers: true }, {name: nil, id: "card_month", :"data-stripe" => "exp-month" } %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-2 columns">
+				<%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", :"data-stripe" => "exp-year" } %>
+			</div>
+		</div>
+		<%= submit_tag "Save Credit Card", id: "new_credit_card", class: 'button btn-pay', remote: true%>
 </form>

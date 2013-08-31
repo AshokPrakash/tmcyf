@@ -17,7 +17,7 @@ class CreditCardsController < ApplicationController
       # wrong, like an insufficient balance or an invalid card number
       logger.info(e)
       flash[:error] = "There was a problem processing your request."
-      redirect_to account_payments_path 
+      redirect_to account_payments_path and return
     end
     respond_to do |format|
       format.html { redirect_to account_payments_path }

@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   def index
+    @credit_card = current_user.credit_card
     events_requiring_payment = Event.where.not(cost: nil)
     events_paid_for = current_user.payments.collect { |p| p.event }
     # the set difference of two arrays a & b in ruby is (a - b) | (b - a)
