@@ -5,3 +5,4 @@ log/
 # Ignore application configuration
 /config/application.yml
 /config/rubber/common/rubber.profile
+/config/certs/
