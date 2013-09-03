@@ -8,14 +8,14 @@
 			<div class="large-12 columns">
 				<div class="large-6 large-centered columns show-page-eventdata">
 					<div class="show-datetime"><%= @event.startdt.try(:strftime,"%B %d, %Y | %I:%M %p") %></div>
-					<p><%=raw @event.location %></p>
+					<p><%= @event.location.html_safe %></p>
 				</div>
 			</div>
 			<div class="large-1 large-centered columns">
 				<hr />
 			</div>		
 		</div>
-		<p class="show-page-body"><%= @event.body%></p>
+		<p class="show-page-body"><%= @event.body.html_safe %></p>
 		<div class="large-3 large-centered columns">
 			<hr />
 		</div>
