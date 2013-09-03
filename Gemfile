@@ -25,7 +25,6 @@ gem 'carrierwave'
 gem 'fog'
 gem 'friendly_id', '5.0.0.beta1'
 gem 'twilio-ruby'
-gem 'pry', group: :development # for debugging
 gem 'stripe'
 gem 'gibbon'
 gem 'rubber', github: 'rubber/rubber'
@@ -48,5 +47,8 @@ gem 'thin', group: :development
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+gem 'better_errors', group: :development
+gem 'binding_of_caller', group: :development
+gem 'meta_request', group: :development
 gem 'pry', group: :development
 gem 'open4'

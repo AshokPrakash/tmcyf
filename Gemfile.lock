@@ -49,7 +49,13 @@ GEM
     arel (4.0.0)
     atomic (1.1.13)
     bcrypt-ruby (3.1.2)
+    better_errors (0.9.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.1.4)
+    callsite (0.0.11)
     capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
@@ -76,6 +82,7 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     daemons (1.1.9)
+    debug_inspector (0.0.2)
     debugger (1.6.1)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -130,6 +137,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.2.8)
+      callsite
+      rack-contrib
+      railties
     method_source (0.8.2)
     mime-types (1.25)
     mini_portile (0.5.1)
@@ -154,6 +165,8 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0)
@@ -238,6 +251,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   capistrano
   carrierwave
   coffee-rails (~> 4.0.0)
@@ -251,6 +266,7 @@ DEPENDENCIES
   gibbon
   icalendar
   jquery-rails
+  meta_request
   open4
   pg
   pry

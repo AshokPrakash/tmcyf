@@ -519,8 +519,10 @@ footer {
     font-size: .7em;
     li {
       display: inline;
+      a {
+        margin: 0 3px 0 -1px;
+      }
       &:after {
-        padding-left: .5em;
         content: '\00B7';
       }
       &:last-of-type:after {
