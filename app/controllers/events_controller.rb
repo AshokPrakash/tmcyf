@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     redirect_to :root unless current_user && current_user.admin?
-    @event = Event.new    
+    @event = Event.new
   end
 
   # GET /events/1/edit

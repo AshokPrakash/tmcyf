@@ -3,11 +3,11 @@ Static::Application.routes.draw do
     resources :payments, only: [:create, :new]
   end
 
-  # the model for credit cards is no longer necessary (we're storing them with 
-  # stripe), but the routes for credit cards still are 
+  # the model for credit cards is no longer necessary (we're storing them with
+  # stripe), but the routes for credit cards still are
   resources :credit_cards, only: [:new, :create, :delete, :show]
-  
-  devise_for :users, 
+
+  devise_for :users,
     controllers: { registrations: :registrations, confirmations: :confirmations },
     path: '',
     path_names: {sign_in: 'login',
@@ -43,7 +43,7 @@ Static::Application.routes.draw do
   get '/account/profile'            => 'pages#profile'
   get '/account/preferences'        => 'pages#preferences'
   post '/account/preferences'       => 'pages#update_preferences'
-  get '/account/payments'           => 'payments#index' 
+  get '/account/payments'           => 'payments#index'
   get '/privacy_policy'             => 'pages#privacy_policy'
   # TODO: routed with default for expediency, change this later
   get '/admin/contact_all'          => 'contact#contact_all', as: "contact_all"

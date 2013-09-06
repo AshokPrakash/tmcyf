@@ -6,7 +6,7 @@
     <li><%= link_to "Payments", account_payments_path %></li>
   	<% if current_user.try(:admin?) %>
   	<li><%= link_to "Admin", admin_path %></li>
-  	<% end %>    
+  	<% end %>
     <li><%= link_to "Logout", destroy_user_session_path %></li>
   </ul>
 </div>

@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.text :location
 			t.string :image
 			t.text :body
-			t.string :slug    
+			t.string :slug
 
       t.timestamps
     end

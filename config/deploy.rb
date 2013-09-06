@@ -30,11 +30,11 @@ set :keep_releases, 3
 
 # Lets us work with staging instances without having to checkin config files
 # (instance*.yml + rubber*.yml) for a deploy.  This gives us the
-# convenience of not having to checkin files for staging, as well as 
+# convenience of not having to checkin files for staging, as well as
 # the safety of forcing it to be checked in for production.
 set :push_instance_config, Rubber.env != 'production'
 
-# don't waste time bundling gems that don't need to be there 
+# don't waste time bundling gems that don't need to be there
 set :bundle_without, [:development, :test, :staging] if Rubber.env == 'production'
 
 # Allow us to do N hosts at a time for all tasks - useful when trying
@@ -80,7 +80,7 @@ after "deploy", "cleanup"
 after "deploy:migrations", "cleanup"
 task :cleanup, :except => { :no_release => true } do
   count = fetch(:keep_releases, 5).to_i
-  
+
   rsudo <<-CMD
     all=$(ls -x1 #{releases_path} | sort -n);
     keep=$(ls -x1 #{releases_path} | sort -n | tail -n #{count});

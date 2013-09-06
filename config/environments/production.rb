@@ -68,6 +68,7 @@ Static::Application.configure do
   PUBLIC_URL = 'dev.tmcyf.org'
   
   config.action_mailer.default_url_options = { :host => 'dev.tmcyf.org' }
+
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp

@@ -2,11 +2,11 @@ class CreditCardsController < ApplicationController
   # This is necessary because we have some ajax submits in here that don't
   # currently submit the authenticity token. I'm not yet sure of the right way
   # to avoid doing this.
-  skip_before_action :verify_authenticity_token 
+  skip_before_action :verify_authenticity_token
   def new
   end
   def create
-    
+
     begin
       # user.new_card will catch any exceptions from params[:stripe_token]
       # being nil, or problems with the Stripe API re: that specific card
