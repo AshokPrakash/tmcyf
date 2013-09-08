@@ -5,40 +5,54 @@
 	  <fieldset class="fields">
 	    <div class="large-12 columns">
 	      <h2>Payments</h2>
-        <h3>Credit Card:</h3>
-          <div id="default_card">
-            <% if @credit_card %>
-              <div class="well">
-                <i class="icon-credit-card cc"></i> Your current card **** **** **** <%= @credit_card.last4 + " " + @credit_card.type %>
-              </div>
-              <p>Update your credit card below!</p>
-            <% else %>
-              <p>Add a credit card below!</p>
-            <% end %>
-          </div>
-        <%= render 'credit_cards/form' %>
-	      <table class="pay-table">
-				  <thead>
-				    <tr>
-				      <th>Payment</th>
-				      <th>Amount</th>
-				      <th></th>
-				    </tr>
-				  </thead>
-				  <tbody>
-            <!-- TODO: maybe we can make this something like render "event_payment_form" -->
-            <% if @unpaid_events %>
-              <% @unpaid_events.each do |unpaid_event| %>
+        <div class="payments">
+          <% if @unpaid_events.present? %>
+            <table class="pay-table">
+              <thead>
                 <tr>
-                  <td><%= unpaid_event.title %></td>
-                  <td><%= number_to_currency(unpaid_event.cost) %></td>
-                  <!-- TODO: This Pay Now button can be a post request to the payments controller, with remote: true, and we can return some javascript to display loading and stripe-success -->
-                  <td><%= button_to "Pay Now", event_payments_path(unpaid_event), class: "button btn-pay", method: :post, data: { confirm: "Are you sure you want to make this payment?" } %></td>
+                  <th>Payment</th>
+                  <th>Amount</th>
+                  <th></th>
                 </tr>
+              </thead>
+              <tbody>
+                <!-- TODO: maybe we can make this something like render "event_payment_form" -->
+                  <% @unpaid_events.each do |unpaid_event| %>
+                    <tr>
+                      <td><%= unpaid_event.title %></td>
+                      <td><%= number_to_currency(unpaid_event.cost) %></td>
+                      <!-- TODO: This Pay Now button can be a post request to the payments controller, with remote: true, and we can return some javascript to display loading and stripe-success -->
+                      <td><%= button_to "Pay Now", event_payments_path(unpaid_event), class: "button btn-pay", method: :post, data: { confirm: "Are you sure you want to make this payment?" } %></td>
+                    </tr>
+                  <% end %>
+              </tbody>
+            </table>
+          <% else %>
+          <h6>You have no payments to make!</h6>
+          <% end %>
+        </div>       
+        <hr /> 
+        <div class="cc">
+          <h3>Credit Card:</h3>
+            <div id="default_card">
+              <% if @credit_card %>
+                <div class="well">
+                  <i class="icon-credit-card cc"></i> Your current card **** **** **** <%= @credit_card.last4 + " " + @credit_card.type %>
+                </div>
+                <p>Update your credit card below!</p>
+              <% else %>
+                <p>Add a credit card below!</p>
               <% end %>
-            <% end %>
-				  </tbody>
-				</table>
+            </div>
+          <%= render 'credit_cards/form' %>
+          <% if @credit_card %>
+            <%= submit_tag "Update Credit Card", id: "new_credit_card", class: "button btn-pay", remote: true %>
+            </form>
+          <% else %>
+            <%= submit_tag "Save Credit Card", id: "new_credit_card", class: "button btn-pay", remote: true %>
+            </form>
+          <% end %>
+        </div>
 	     </div>
 	  </fieldset>
 	</div>

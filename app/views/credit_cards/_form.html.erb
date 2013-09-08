@@ -20,5 +20,3 @@
 		<%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", :"data-stripe" => "exp-year" } %>
 	</div>
 </div>
-<%= submit_tag "Save Credit Card", id: "new_credit_card", class: "button btn-pay", remote: true%>
-</form>

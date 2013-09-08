@@ -15,6 +15,10 @@ class PagesController < ApplicationController
   end
 
   def account
+    @completion_percentage = current_user.profile_completion_percentage
+    @paid_events = current_user.paid_events
+    @dues_paid = current_user.dues_paid?
+    @has_selected_contact_preference = current_user.has_selected_contact_preference?
   end
 
   def admin
