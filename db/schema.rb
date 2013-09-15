@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130914214552) do
+ActiveRecord::Schema.define(version: 20130915223325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,17 @@ ActiveRecord::Schema.define(version: 20130914214552) do
     t.string   "insurance_policy_number"
     t.date     "start_date"
     t.date     "end_date"
+    t.string   "email"
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "phone"
+    t.string   "gender"
+    t.date     "birthday"
+    t.string   "line1"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "shirtsize"
   end
 
   create_table "retreats", force: true do |t|

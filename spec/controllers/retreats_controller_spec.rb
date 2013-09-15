@@ -53,11 +53,11 @@ describe RetreatsController do
     end
   end
 
-  describe "POST create" do
+  describe "POST register" do
     describe "with valid params" do
-      it "creates a new Retreat" do
+      it "creates a new Registration" do
         expect {
-          post :create, {:retreat => valid_attributes}, valid_session
+          post :register, {:retreat => valid_attributes}, valid_session
         }.to change(Retreat, :count).by(1)
       end
 
@@ -65,6 +65,29 @@ describe RetreatsController do
         post :create, {:retreat => valid_attributes}, valid_session
         assigns(:retreat).should be_a(Retreat)
         assigns(:retreat).should be_persisted
+      end
+
+      it "redirects to the created retreat" do
+        post :create, {:retreat => valid_attributes}, valid_session
+        response.should redirect_to(Retreat.last)
+      end
+    end
+  end
+
+
+  # TODO: WTFFFFF
+  describe "POST create" do
+    describe "with valid params" do
+      it "creates a new Retreat" do
+        expect {
+          post :create, {:retreat_registration => valid_attributes}, valid_session
+        }.to change(RetreatRegistration, :count).by(1)
+      end
+
+      it "assigns a newly created retreat as @retreat" do
+        post :create, {:retreat => valid_attributes}, valid_session
+        assigns(:retreat_registration).should be_a(RetreatRegistration)
+        assigns(:retreat_registration).should be_persisted
       end
 
       it "redirects to the created retreat" do

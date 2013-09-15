@@ -2,9 +2,10 @@ Static::Application.routes.draw do
   # we're adding the singular retreat path as a route to the latest/current
   # retreat
   get '/retreat' => "retreats#show", as: "retreat"
-  resources :retreats, except: [:show, :edit]
+  post '/retreat/register' => "retreat_registrations#create"
   
 
+  resources :retreats, except: [:show, :edit]
   resources :events do
     resources :payments, only: [:create, :new]
   end

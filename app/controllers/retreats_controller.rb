@@ -10,6 +10,7 @@ class RetreatsController < ApplicationController
   def show
     # Show only the latest retreat at the singular retreat path
     @retreat = Retreat.last
+    @registration = RetreatRegistration.new
   end
 
   # GET /retreats/new
@@ -19,6 +20,10 @@ class RetreatsController < ApplicationController
 
   # GET /retreats/1/edit
   def edit
+  end
+
+  def register
+    RetreatRegistration.create(registration_params)
   end
 
   # POST /retreats
@@ -56,5 +61,27 @@ class RetreatsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def retreat_params
       params[:retreat]
+    end
+    def registration_params
+      params.require(:retreat_registration).permit(
+        :emergency_contact,
+        :emergency_relation,
+        :emergency_phone,
+        :insurance_provider,
+        :insurance_policy_number,
+        :start_date,
+        :end_date,
+        :email,
+        :fname,
+        :lname,
+        :phone,
+        :gender,
+        :birthday,
+        :line1,
+        :city,
+        :state,
+        :zip,
+        :shirtsize
+      )
     end
 end
