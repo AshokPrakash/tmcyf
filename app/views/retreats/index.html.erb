@@ -1,0 +1,24 @@
+<h1>Listing retreats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @retreats.each do |retreat| %>
+      <tr>
+        <td><%= link_to 'Show', retreat %></td>
+        <td><%= link_to 'Destroy', retreat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Retreat', new_retreat_path %>
