@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(page_title)
-  	base_title = "Trinity Marthoma Church Youth Fellowship"
+  	base_title = "Trinity Mar Thoma Church Youth Fellowship"
   	if page_title.empty?
   		base_title
   	else
