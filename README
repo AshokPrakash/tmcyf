@@ -1,15 +1,6 @@
 Deployment
 
-Live at: http://dev.tmcyf.org/ or http://ec2-184-73-116-177.compute-1.amazonaws.com/
+Live at: http://tmcyf.org/
 
-To make shit work: 
-
-1. checkout branch
-2. ask for file with env vars nicely
-3. run cap rubber:refresh to add host to local host file
-
-Recommended workflow:
-
-1. make changes in develop
-2. merge with deploy (should have zero conflicts)
-3. run cap deploy
+1. Merge from master
+2. cap deploy

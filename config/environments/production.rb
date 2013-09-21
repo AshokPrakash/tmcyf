@@ -65,9 +65,9 @@ Static::Application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
   
-  PUBLIC_URL = 'dev.tmcyf.org'
+  PUBLIC_URL = 'tmcyf.org'
   
-  config.action_mailer.default_url_options = { :host => 'dev.tmcyf.org' }
+  config.action_mailer.default_url_options = { :host => 'tmcyf.org' }
 
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
