@@ -30,6 +30,14 @@
           <% else %>
           <h6>You have no payments to make!</h6>
           <% end %>
+          <% @paid_events.each do |paid_event| %>
+            <tr>
+              <td><%= paid_event.title %></td>
+              <td><%= number_to_currency(paid_event.cost) %></td>
+              <!-- TODO: This Pay Now button can be a post request to the payments controller, with remote: true, and we can return some javascript to display loading and stripe-success -->
+              <td>Event Paid!</td>
+            </tr>
+          <% end %>
         </div>       
         <hr /> 
         <div class="cc">
