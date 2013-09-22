@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20130903042505) do
     t.datetime "payment_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "last4"
     t.integer  "user_id"
   end
 
@@ -73,6 +72,7 @@ ActiveRecord::Schema.define(version: 20130903042505) do
     t.boolean  "sms_contact"
     t.boolean  "admin",                  default: false
     t.string   "stripe_id"
+    t.string   "last_4_digits"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree
