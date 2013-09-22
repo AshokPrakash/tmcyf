@@ -22,7 +22,7 @@ class GiveController < ApplicationController
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
   )
-  flash[:success] = "Swaggg!"
+  flash[:success] = "Thanks for your donation!"
   redirect_to give_index_path
 
 rescue Stripe::CardError => e

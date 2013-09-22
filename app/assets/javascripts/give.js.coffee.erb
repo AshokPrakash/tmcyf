@@ -9,7 +9,7 @@ $("#stripebutton").click ->
 
   StripeCheckout.open
     key: "<%= ENV['STRIPE_PUBLIC_KEY'] %>"
-    amount: $('#amount').val
+    amount: $('#amount').val() * 100
     currency: "usd"
     name: "TMCYF"
     description: "Your Donation"
