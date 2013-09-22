@@ -66,7 +66,7 @@ class User < ActiveRecord::Base
     gibbon = Gibbon::API.new
     Gibbon::API.throws_exceptions = false
     self.email_contact = true
-    if !gibbon.lists.members(id: ENV['MAILCHIMP_CAMPAIGN_ID'], email: self.email)
+    if gibbon.lists.members(id: ENV['MAILCHIMP_CAMPAIGN_ID'], email: self.email)
       gibbon.lists.subscribe(id: ENV['MAILCHIMP_CAMPAIGN_ID'],
                              email: {email: self.email},
                              merge_vars: {FNAME: self.fname, LNAME: self.lname},
