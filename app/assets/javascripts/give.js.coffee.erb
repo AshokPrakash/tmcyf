@@ -1,0 +1,19 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+$("#stripebutton").click ->
+  token = (res) ->
+    $input = $("<input type=hidden name=stripeToken />").val(res.id)
+    $("form").append($input).submit()
+
+  StripeCheckout.open
+    key: "<%= ENV['STRIPE_PUBLIC_KEY'] %>"
+    amount: $('#amount').val
+    currency: "usd"
+    name: "TMCYF"
+    description: "Your Donation"
+    panelLabel: "Pay"
+    token: token
+
+  false

@@ -1,11 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300|Arvo);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300|Arvo|Cardo:400italic);
 
 $primary: #c73f3f;
 $body: #333;
 $asphalt: #34495E;
 $abestos: #7F8C8D;
-
-
 
 body {
   border-top: 7px solid $primary;
@@ -80,6 +78,16 @@ div.ui-datepicker{
       text-decoration: none;
     }
   }
+  &.btn-stripe {
+    color: $asphalt;
+    border-color: $asphalt;
+    margin: 0;
+    &:hover {
+      background-color: $asphalt;
+      color: #fff;
+      text-decoration: none;
+    }
+  }  
 }
 
 textarea {
@@ -147,6 +155,7 @@ input {
 }
 
 //MISC
+
 .well {
   padding: 10px;
   font-size: 13px;
@@ -491,22 +500,6 @@ label {
       }
     }
   }
-}
-
-// EVENTS
-
-.index-page-location {
-  margin-top: 0.5em;
-}
-
-h3.show-page-title, .show-page-eventdata, .ics, .show-page-body {
-  text-align: center;
-}
-.ics {
-  margin-bottom: 2em;
-}
-.event-form-edit-datetime select {
-  width: 25%;
 }
 
 // FOOTER

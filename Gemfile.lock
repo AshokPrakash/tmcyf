@@ -19,6 +19,14 @@ GIT
       open4
       thor
 
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 49724d755db799c39aee743054bdd6f55e8a23cc
+  specs:
+    stripe (1.8.7)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -242,9 +250,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    stripe (1.8.7)
-      multi_json (>= 1.0.4, < 2)
-      rest-client (~> 1.4)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -314,7 +319,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   simple_form
-  stripe
+  stripe!
   therubyracer
   thin
   turbolinks

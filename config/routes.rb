@@ -1,4 +1,7 @@
 Static::Application.routes.draw do
+
+  resources :give, only: [:index, :new, :create]
+  
   resources :events do
     resources :payments, only: [:create, :new]
   end
