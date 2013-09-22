@@ -3,9 +3,9 @@ Static::Application.routes.draw do
   # retreat
   get '/retreat' => "retreats#show", as: "retreat"
   post '/retreat/register' => "retreat_registrations#create"
-  
 
   resources :retreats, except: [:show, :edit]
+  resources :give, only: [:index]
   resources :events do
     resources :payments, only: [:create, :new]
   end

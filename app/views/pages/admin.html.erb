@@ -12,8 +12,23 @@
 			<div class="large-12 columns">
 				<h5>List of users who prefer Facebook:</h5>
 				<% @fbname.each do |fullname| %>
-					<%= fullname %>
+					<li style="list-style: none;"><%= fullname %></li>
 				<% end %>
+			<hr />
+				<h5>List of users who prefer SMS:</h5>
+				<% @smsname.each do |fullname| %>
+					<li style="list-style: none;"><%= fullname %></li>
+				<% end %>
+			<hr />
+				<h5>List of users who prefer Email:</h5>
+				<% @emailname.each do |fullname| %>
+					<li style="list-style: none;"><%= fullname %></li>
+				<% end %>
+			<hr />			
+				<h5>List of users:</h5>
+				<% @allusers.each do |fullname| %>
+					<li style="list-style: none;"><%= fullname %></li>
+				<% end %>						
 			</div>
 		</div>
 	</div>
