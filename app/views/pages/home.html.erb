@@ -1,16 +1,19 @@
 <div class="row">
   <div class="large-12 columns">
     <div>
-      <img src="https://s3-us-west-2.amazonaws.com/files.tmcyf.org/electricsunset.jpg" />
+      <div id="slider" data-orbit data-options="slide_number_class:false; bullets:false;">
+        <%= link_to image_tag('https://s3-us-west-2.amazonaws.com/files.tmcyf.org/gb.jpg'), 'https://tmcyf.org/events/general-body' %>
+        <%= link_to image_tag('https://s3-us-west-2.amazonaws.com/files.tmcyf.org/cottageprayer.jpg'), 'https://tmcyf.org/events/cottage-prayer' %>
+      </div>
     </div>
   <hr />
   </div>
 </div>
 <div class="row content-blocks">
-  <div class="large-3 columns"><img src="https://s3-us-west-2.amazonaws.com/files.tmcyf.org/album.png" /></div>
-  <div class="large-3 columns"><img src="https://s3-us-west-2.amazonaws.com/files.tmcyf.org/dlapps.png" /></div>
-  <%= link_to image_tag('https://s3-us-west-2.amazonaws.com/files.tmcyf.org/sub-fb.png'), 'https://facebook.com/tmcyf', class: 'large-3 columns' %>
-  <%= link_to image_tag('https://s3-us-west-2.amazonaws.com/files.tmcyf.org/sub-retreat.jpg'), root_path, class: 'large-3 columns' %>
+  <%= link_to image_tag('https://s3-us-west-2.amazonaws.com/files.tmcyf.org/28day.jpg'), 'http://files.tmcyf.org/pdf/28day.pdf', class: 'large-3 columns' %>
+  <%= link_to image_tag('https://s3-us-west-2.amazonaws.com/files.tmcyf.org/donate.jpg'), root_path, class: 'large-3 columns' %>
+  <%= link_to image_tag('https://s3-us-west-2.amazonaws.com/files.tmcyf.org/bibleapp.jpg'), 'https://www.bible.com/app', class: 'large-3 columns' %>
+  <%= link_to image_tag('https://s3-us-west-2.amazonaws.com/files.tmcyf.org/sub-fb.png'), 'https://facebook.com/tmcyf', class: 'large-3 columns' %>  
 </div>
 <div class="row">
   <div class="large-6 large-centered columns votd">
