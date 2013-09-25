@@ -1,0 +1,62 @@
+---
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: helios
+  domain: tmcyf.org
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: app
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: unicorn
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: nginx
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: collectd
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: common
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: db
+    options:
+      primary: true
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: postgresql
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: postgresql_master
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: web
+    options: {}
+  instance_id: i-4d3b5234
+  image_type: t1.micro
+  image_id: ami-23d9a94a
+  security_groups:
+  - tmcyf_helios_default
+  - tmcyf_helios_web
+  - tmcyf_helios_helios
+  - tmcyf_helios_app
+  - tmcyf_helios_unicorn
+  - tmcyf_helios_nginx
+  - tmcyf_helios_collectd
+  - tmcyf_helios_common
+  - tmcyf_helios_monit
+  - tmcyf_helios_db
+  - tmcyf_helios_postgresql
+  - tmcyf_helios_postgresql_master
+  external_host: ec2-54-237-122-190.compute-1.amazonaws.com
+  external_ip: 54.237.122.190
+  internal_host: ip-10-194-215-4.ec2.internal
+  internal_ip: 10.194.215.4
+  zone: us-east-1d
+  provider: aws
+  platform: linux
+  root_device_type: ebs
+- volumes: {}
+  static_ips: {}
