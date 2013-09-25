@@ -14,3 +14,9 @@ production:
   database: db_production
   pool: 5
   timeout: 5000
+
+helios:
+  adapter: postgresql
+  database: db_helios
+  pool: 5
+  timeout: 5000  
