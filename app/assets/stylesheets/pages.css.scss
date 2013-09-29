@@ -4,6 +4,7 @@ $primary: #c73f3f;
 $body: #333;
 $asphalt: #34495E;
 $abestos: #7F8C8D;
+$disable: #e6e6e6;
 
 body {
   border-top: 7px solid $primary;
@@ -129,6 +130,21 @@ input {
   color: #555;
   &:focus {
     border-color: $primary;
+  }
+}
+.button[disabled] {
+  background-color: $disable;
+  border-color: $asphalt;
+  cursor: default;
+  opacity: 0.6;
+  margin: 20px 0 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: $asphalt;
+    &:hover {
+    background-color: $disable;
+    color: $asphalt;
+    text-decoration: none;
   }
 }
 

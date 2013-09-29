@@ -51,4 +51,6 @@ Static::Application.routes.draw do
   # TODO: routed with default for expediency, change this later
   get '/admin/contact_all'          => 'contact#contact_all', as: "contact_all"
   post '/admin/send_message'        => 'contact#send_all_message', as: "send_message"
+  get '/admin/new_announcement'     => 'contact#new_announcement', as: "new_announcement"
+  post '/admin/make_announcement'   => 'contact#make_announcement', as: "make_announcement"
 end

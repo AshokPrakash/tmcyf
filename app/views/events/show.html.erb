@@ -9,7 +9,7 @@
 			<div class="large-12 columns">
 				<div class="large-6 large-centered columns show-page-eventdata">
 					<div class="show-datetime"><%= @event.startdt.try(:strftime,"%B %d, %Y | %I:%M %p") %></div>
-					<p><%= @event.location.html_safe %></p>
+          <p class="show-page-location"><%= link_to @event.location, "https://maps.google.com/maps?daddr=#{URI::encode(@event.location)}" %></p>
 				</div>
 			</div>
 			<div class="large-1 large-centered columns">

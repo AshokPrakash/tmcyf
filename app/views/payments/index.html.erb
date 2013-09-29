@@ -28,9 +28,28 @@
               </tbody>
             </table>
           <% else %>
-          <h6>You have no payments to make!</h6>
+            <table class="pay-table">
+              <thead>
+                <tr>
+                  <th>Payment</th>
+                  <th>Amount</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- TODO: maybe we can make this something like render "event_payment_form" -->
+                  <% @paid_events.each do |paid_event| %>
+                    <tr>
+                      <td><%= paid_event.title %></td>
+                      <td><%= number_to_currency(paid_event.cost) %></td>
+                      <!-- TODO: This Pay Now button can be a post request to the payments controller, with remote: true, and we can return some javascript to display loading and stripe-success -->
+                      <td><%= button_to "Paid!", root_path, class: "button", :disabled => true, data: { confirm: "Are you sure you want to make this payment?" } %></td>
+                    </tr>
+                  <% end %>
+              </tbody>
+            </table>
           <% end %>
-        </div>       
+        </div>     
         <hr /> 
         <div class="cc">
           <h3>Credit Card:</h3>

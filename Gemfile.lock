@@ -8,9 +8,9 @@ GIT
 
 GIT
   remote: git://github.com/rubber/rubber.git
-  revision: c967875a8c4402a790742b60c59c600ebb8c12b5
+  revision: de744c15a2a0e7678dd5f7d3af336a281cf71df2
   specs:
-    rubber (2.5.3)
+    rubber (2.5.4)
       capistrano (~> 2.12)
       clamp
       fog (~> 1.6)
@@ -26,6 +26,13 @@ GIT
     stripe (1.8.7)
       multi_json (>= 1.0.4, < 2)
       rest-client (~> 1.4)
+
+GIT
+  remote: https://github.com/tmcyf/paul_revere
+  revision: 9e5457927660f309fbea624091fa5a727dbb2793
+  specs:
+    paul_revere (1.2)
+      rails (>= 3.0)
 
 GEM
   remote: http://rubygems.org/
@@ -97,7 +104,7 @@ GEM
       sass (~> 3.1)
     daemons (1.1.9)
     debug_inspector (0.0.2)
-    debugger (1.6.1)
+    debugger (1.6.2)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
       debugger-ruby_core_source (~> 1.2.3)
@@ -112,7 +119,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.25.3)
-    execjs (2.0.1)
+    execjs (2.0.2)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
@@ -228,7 +235,7 @@ GEM
     ruby-hmac (0.4.0)
     ruby_parser (3.2.2)
       sexp_processor (~> 4.1)
-    sass (3.2.10)
+    sass (3.2.11)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
@@ -266,7 +273,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (1.3.0)
       coffee-rails
-    twilio-ruby (3.11.0)
+    twilio-ruby (3.11.1)
       builder (>= 2.1.2)
       jwt (>= 0.1.2)
       multi_json (>= 1.3.0)
@@ -308,6 +315,7 @@ DEPENDENCIES
   jquery-rails
   meta_request
   open4
+  paul_revere!
   pg
   pry
   quiet_assets

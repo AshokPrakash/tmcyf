@@ -15,5 +15,6 @@
 //= require foundation
 //= require bootstrap.min.js
 //= require bootstrap-switch.js
+//= require announcements
 //= require_tree .
 $(function(){ $(document).foundation(); });

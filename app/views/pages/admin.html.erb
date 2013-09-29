@@ -10,6 +10,9 @@
 				<%= link_to "Create a SMS", contact_all_path, class: "new-sms-link" %>
 			</div>
 			<div class="large-12 columns">
+				<%= link_to "Create an announcement", new_announcement_path, class: "new-announcement-link" %>
+			</div>			
+			<div class="large-12 columns">
 				<h5>List of users who prefer Facebook:</h5>
 				<% @fbname.each do |fullname| %>
 					<li style="list-style: none;"><%= fullname %></li>

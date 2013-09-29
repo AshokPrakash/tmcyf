@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   def index
     @credit_card = current_user.credit_card
+    @paid_events = current_user.paid_events
     @unpaid_events = current_user.unpaid_events
   end
   def new
